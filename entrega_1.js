@@ -47,9 +47,11 @@ const fiat_uno = new Automovil ("fiat1_23","fiat uno 2023", 2000000);
 const bmw_serie_1 = new Automovil ("bmw_s1_23","bmw serie 1 2023", 6000000);
 
 const arrayCarros = [ford_focus, chevrolet_cruz, fiat_uno, bmw_serie_1];
-const idDelCarro = "ford_foc_23"
-const carroSeleccionado = arrayCarros.filter(automovil => automovil.id == "ford_foc_23");
-// console.log("su nuevo" + carroSeleccionado.nombre + "cuesta" + carroSeleccionado.prec
+const idDelCarro = "fiat1_23"
+const carroSeleccionado = arrayCarros.find(automovil => automovil.id == idDelCarro);
+
+console.log("su nuevo " + carroSeleccionado.nombre + " cuesta $" + carroSeleccionado.precio)
+//console.log (carroSeleccionado)
 
 
  
