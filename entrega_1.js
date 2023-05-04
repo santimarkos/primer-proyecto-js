@@ -70,10 +70,16 @@
 
 const app = document.getElementById('app')
     
+const carro = {
+    precio: 10000,
+    nombre: 'uno',
+    marca: 'ferrari',
+    color: 'rojo'
+}
 const html = /* HTML */`<header>
 <img src=./assets/fiat1.jpg alt="#">
-      <h2>auto</h2>
-      <p>precio</p> 
+      <h2>${carro.marca} ${carro.nombre}</h2>
+      <p>$ ${carro.precio}</p> 
       </header>
   <form id="carrito" >
       <select name="" id="tipoPago">
@@ -88,12 +94,6 @@ const html = /* HTML */`<header>
 
 app.innerHTML = html
 
-const carro = {
-    precio: 10000,
-    nombre: 'uno',
-    marca: 'ferrari',
-    color: 'rojo'
-}
 
 const formulario = document.getElementById('carrito')
 
@@ -110,7 +110,8 @@ tipoPago.addEventListener('input', (e) => {
     const valueDescuento = Number(rawValue)
     descuento = rawValue
     const total = carro.precio * valueDescuento
-    console.log(total);
+    const precioFinal = document.querySelector('#precioFinal')
+    precioFinal.textContent = 'el valor final es ' + total
 })
 formulario.addEventListener('submit',calcular)
 // window.localStorage.setItem('valorConDescuento')
